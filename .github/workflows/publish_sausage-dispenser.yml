@@ -23,10 +23,16 @@ jobs:
         uses: TriPSs/conventional-changelog-action@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          version-file: charts/${{ env.CHART_NAME }}/Chart.yaml
+          version-file: ./charts/${{ env.CHART_NAME }}/Chart.yaml
           version-path: version
           skip-ci: true
-          skip-commit: true
+          skip-commit: false # Update versions file
           output-file: charts/${{ env.CHART_NAME }}/CHANGELOG.md
           release-count: 10
           fallback-version: "0.1.0"
+          tag-prefix: "${{ env.CHART_NAME }}-"
+
+      - name: Run chart-releaser
+        uses: helm/chart-releaser-action@v1.4.0
+        env:
+          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
