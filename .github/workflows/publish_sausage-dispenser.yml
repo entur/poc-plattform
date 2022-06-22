@@ -20,6 +20,7 @@ jobs:
           fetch-depth: 0
 
       - name: Conventional Changelog Action
+        id: changelog
         uses: TriPSs/conventional-changelog-action@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -32,6 +33,14 @@ jobs:
           release-count: 10
           fallback-version: "0.1.0"
           tag-prefix: "${{ env.CHART_NAME }}-"
+
+      - name: Delete Tag
+        uses: dev-drprasad/delete-tag-and-release@v0.1.3
+        with:
+          delete_release: true
+          tag_name: ${{ steps.changelog.outputs.tag }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.4.0
