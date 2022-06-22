@@ -38,7 +38,7 @@ jobs:
           PACKAGEJSON_DIR: versions/${{ env.CHART_NAME }}
         with:
           skip-tag: "true"
-          commit-message: "CI: Bump Helm chart version to {{version}}"
+          commit-message: "CI: Package version {{version}}"
 
       - name: Get app version
         if: steps.changed-files-specific.outputs.any_modified == 'true'
@@ -67,7 +67,7 @@ jobs:
         if: steps.changed-files-specific.outputs.any_modified == 'true'
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Bump semver
+          commit_message: "CI: Helm chart version ${{ steps.version-bump.outputs.newTag }}"
 
       - name: Run chart-releaser
         if: steps.changed-files-specific.outputs.any_modified == 'true'
