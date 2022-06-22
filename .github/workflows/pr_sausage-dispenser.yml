@@ -13,7 +13,7 @@ on:
       - "charts/sausage-dispenser/**"
 
 env:
-  CT_CHART_DIRS: ./charts/sausage-dispenser
+  CT_CHART_DIRS: charts/sausage-dispenser
 
 jobs:
   lint-test:
