@@ -2,8 +2,7 @@ name: release - sausage dispenser
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
     paths:
       - "charts/sausage-dispenser/**"
 
@@ -12,67 +11,22 @@ env:
   CHART_NAME: "sausage-dispenser"
 
 jobs:
-  release:
+  release-chart:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout source code
-        uses: "actions/checkout@v2"
+      - name: Check out code
+        uses: actions/checkout@v2
         with:
-          ref: ${{ github.ref }}
           fetch-depth: 0
 
-      - uses: webiny/action-conventional-commits@v1.0.5
-
-      - name: Get specific changed files
-        id: changed-files-specific
-        uses: tj-actions/changed-files@v17.3
+      - name: Conventional Changelog Action
+        uses: TriPSs/conventional-changelog-action@v3
         with:
-          files: |
-            charts/${{ env.CHART_NAME }}
-
-      - name: Automated Version Bump
-        if: steps.changed-files-specific.outputs.any_modified == 'true'
-        id: version-bump
-        uses: "phips28/gh-action-bump-version@master"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PACKAGEJSON_DIR: versions/${{ env.CHART_NAME }}
-        with:
-          skip-tag: "true"
-          commit-message: "CI: Package version {{version}}"
-
-      - name: Get app version
-        if: steps.changed-files-specific.outputs.any_modified == 'true'
-        id: package-version
-        uses: martinbeentjes/npm-get-version-action@master
-        with:
-          path: versions/${{ env.CHART_NAME }}
-
-      - name: remove Chart.yml
-        if: steps.changed-files-specific.outputs.any_modified == 'true'
-        working-directory: charts/${{ env.CHART_NAME }}
-        run: sudo rm -rf Chart.yaml
-
-      - name: create new Chart.yaml
-        if: steps.changed-files-specific.outputs.any_modified == 'true'
-        working-directory: charts/${{ env.CHART_NAME }}
-        run: |
-          cat <<EOF > Chart.yaml
-          name: ${{ env.CHART_NAME }}
-          apiVersion: v2
-          version: ${{ steps.version-bump.outputs.newTag }}
-          appVersion: ${{ steps.package-version.outputs.current-version}}
-          EOF
-
-      - name: commit the new Chart.yml
-        if: steps.changed-files-specific.outputs.any_modified == 'true'
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "CI: Helm chart version ${{ steps.version-bump.outputs.newTag }}"
-
-      - name: Run chart-releaser
-        if: steps.changed-files-specific.outputs.any_modified == 'true'
-        uses: helm/chart-releaser-action@v1.4.0
-        env:
-          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          version-file: charts/${{ env.CHART_NAME }}/Chart.yaml
+          version-path: version
+          skip-ci: true
+          skip-commit: true
+          output-file: charts/${{ env.CHART_NAME }}/CHANGELOG.md
+          release-count: 10
+          fallback-version: "0.1.0"
