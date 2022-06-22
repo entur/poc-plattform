@@ -1,9 +1,24 @@
+## [1.3.6](https://github.com/entur/poc-plattform/compare/sausage-dispenser-1.3.4...sausage-dispenser-1.3.6) (2022-06-22)
+
+
+### Bug Fixes
+
+* trigger workflow ([7688957](https://github.com/entur/poc-plattform/commit/7688957252f6795029da8730330396df14a47376))
+* trigger workflow ([e071dfb](https://github.com/entur/poc-plattform/commit/e071dfb30a4936a92d4c728ee1092be950cb3794))
+* worklflow ([e43ca7c](https://github.com/entur/poc-plattform/commit/e43ca7ca6367aabaac3ecce60d099f870fb3a629))
+
+
+
 ## [1.3.4](https://github.com/entur/poc-plattform/compare/sausage-dispenser-1.3.2...sausage-dispenser-1.3.4) (2022-06-22)
 
 
 ### Bug Fixes
 
+* trigger workflow ([c6655ee](https://github.com/entur/poc-plattform/commit/c6655eedb9dadd16400f163a440b5a422bbbdee9))
+* trigger workflow ([90b82dd](https://github.com/entur/poc-plattform/commit/90b82ddbb350a414e79ff06605f569e0703df965))
 * trigger workflow ([ba3c9bc](https://github.com/entur/poc-plattform/commit/ba3c9bc85c994b92b6851aee73118e46d6a90ef5))
+* worklflow ([5b7d96b](https://github.com/entur/poc-plattform/commit/5b7d96bc1d6f019ace62e779a9990448780f9937))
+* worklflow ([af215c2](https://github.com/entur/poc-plattform/commit/af215c2bc68afe6f353421f4a549fe5df3ef0c94))
 * worklflow ([338e7dc](https://github.com/entur/poc-plattform/commit/338e7dc9227b808dcfb6bd6ab9102b70972da643))
 
 
