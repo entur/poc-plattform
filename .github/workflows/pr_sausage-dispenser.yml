@@ -18,9 +18,6 @@ env:
 jobs:
   lint-test:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./charts/sausage-dispenser
     steps:
       - name: Checkout
         uses: actions/checkout@v2
