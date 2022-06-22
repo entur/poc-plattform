@@ -4,4 +4,4 @@ metadata:
   name: example-configmap
 data:
   # Configuration values can be set as key-value properties
-  database: mongodbs
+  database: mongodb
