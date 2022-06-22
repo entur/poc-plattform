@@ -37,9 +37,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PACKAGEJSON_DIR: versions/${{ env.CHART_NAME }}
         with:
-          major-wording: "BREAKING"
-          minor-wording: "feat"
-          patch-wording: "fix,chore,docs,refactor"
           skip-tag: "true"
           commit-message: "CI: Bump Helm chart version to {{version}}"
 
@@ -60,7 +57,7 @@ jobs:
         working-directory: charts/${{ env.CHART_NAME }}
         run: |
           cat <<EOF > Chart.yaml
-          name: ${GITHUB_REPOSITORY#*/}
+          name: ${{ env.CHART_NAME }}
           apiVersion: v2
           version: ${{ steps.version-bump.outputs.newTag }}
           appVersion: ${{ steps.package-version.outputs.current-version}}
@@ -70,7 +67,7 @@ jobs:
         if: steps.changed-files-specific.outputs.any_modified == 'true'
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Automated Change
+          commit_message: Bump semver
 
       - name: Run chart-releaser
         if: steps.changed-files-specific.outputs.any_modified == 'true'
