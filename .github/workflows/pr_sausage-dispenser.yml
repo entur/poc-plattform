@@ -12,6 +12,9 @@ on:
     paths:
       - "charts/sausage-dispenser/**"
 
+env:
+  CT_CHART_DIRS: charts/sausage-dispenser
+
 jobs:
   lint-test:
     runs-on: ubuntu-latest
@@ -27,7 +30,7 @@ jobs:
       - name: Set up Helm
         uses: azure/setup-helm@v1
         with:
-          version: v3.8.1
+          version: v3.2.1
 
       - uses: actions/setup-python@v2
         with:

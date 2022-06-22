@@ -1,9 +1,0 @@
-{
-  "name": "machine-unlearner",
-  "version": "1.2.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/entur/poc-plattform.git"
-  },
-  "homepage": "https://github.com/entur/poc-plattform.git#readme"
-}

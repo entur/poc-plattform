@@ -7,7 +7,6 @@ on:
       - "charts/sausage-dispenser/**"
 
 env:
-  IMAGE_NAME: ${{ github.repository }}
   CHART_NAME: "sausage-dispenser"
 
 jobs:
