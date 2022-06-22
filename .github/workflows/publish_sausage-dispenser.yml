@@ -42,7 +42,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - run: git pull
+      - name: Checkout source code
+        uses: "actions/checkout@v2"
+        with:
+          ref: ${{ github.ref }}
+          fetch-depth: 0
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.4.0
