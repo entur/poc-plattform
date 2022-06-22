@@ -2,6 +2,14 @@ apiVersion: v1
 entries:
   sausage-dispenser:
   - apiVersion: v2
+    appVersion: 1.2.0
+    created: "2022-06-22T10:17:21.357195162Z"
+    digest: e0a3a84332daa370f754d9879fa84dc14749d344a2ab54830058d53ed3288dfd
+    name: sausage-dispenser
+    urls:
+    - https://github.com/entur/poc-plattform/releases/download/sausage-dispenser-1.2.0/sausage-dispenser-1.2.0.tgz
+    version: 1.2.0
+  - apiVersion: v2
     appVersion: 1.1.0
     created: "2022-06-22T10:13:38.522417873Z"
     digest: 55f07b7f32c22affbe1dc83e9b3fb3c46a6d02f0057edff1c989b3d5d2af905b
@@ -9,4 +17,4 @@ entries:
     urls:
     - https://github.com/entur/poc-plattform/releases/download/sausage-dispenser-1.1.0/sausage-dispenser-1.1.0.tgz
     version: 1.1.0
-generated: "2022-06-22T10:13:38.522424573Z"
+generated: "2022-06-22T10:17:21.35722216Z"
