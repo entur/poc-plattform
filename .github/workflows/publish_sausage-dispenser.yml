@@ -11,7 +11,7 @@ env:
   CHART_NAME: "sausage-dispenser"
 
 jobs:
-  release-chart:
+  bump-versions:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
@@ -42,6 +42,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+  release-chart:
+    runs-on: ubuntu-latest
+    steps:
       - name: Checkout source code
         uses: "actions/checkout@v2"
         with:
