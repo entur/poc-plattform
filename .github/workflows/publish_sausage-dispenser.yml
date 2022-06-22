@@ -35,7 +35,7 @@ jobs:
         uses: "phips28/gh-action-bump-version@master"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PACKAGEJSON_DIR: .versions/${{ env.CHART_NAME }}
+          PACKAGEJSON_DIR: versions/${{ env.CHART_NAME }}
         with:
           major-wording: "BREAKING"
           minor-wording: "feat"
@@ -48,7 +48,7 @@ jobs:
         id: package-version
         uses: martinbeentjes/npm-get-version-action@master
         with:
-          path: .versions/${{ env.CHART_NAME }}
+          path: versions/${{ env.CHART_NAME }}
 
       - name: remove Chart.yml
         if: steps.changed-files-specific.outputs.any_modified == 'true'
@@ -65,6 +65,7 @@ jobs:
           version: ${{ steps.version-bump.outputs.newTag }}
           appVersion: ${{ steps.package-version.outputs.current-version}}
           EOF
+
       - name: commit the new Chart.yml
         if: steps.changed-files-specific.outputs.any_modified == 'true'
         uses: stefanzweifel/git-auto-commit-action@v4
