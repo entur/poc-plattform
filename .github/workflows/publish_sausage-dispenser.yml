@@ -28,7 +28,6 @@ jobs:
           version-path: version
           skip-ci: true
           skip-commit: false # Update versions file
-          git-push: false # Do not push tags
           output-file: charts/${{ env.CHART_NAME }}/CHANGELOG.md
           release-count: 10
           fallback-version: "0.1.0"
