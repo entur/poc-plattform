@@ -14,6 +14,18 @@ entries:
   sausage-dispenser:
   - apiVersion: v2
     appVersion: 1.2.0
+    created: "2022-06-23T13:29:52.465894718Z"
+    description: A Helm chart for Kubernetes
+    digest: 465cea83d02a526481ec6ee33403f20ed2017a91eedf38a6e459b796a18a9cd7
+    maintainers:
+    - name: entur/team-plattform
+    name: sausage-dispenser
+    type: application
+    urls:
+    - https://github.com/entur/poc-plattform/releases/download/sausage-dispenser-2.0.0/sausage-dispenser-2.0.0.tgz
+    version: 2.0.0
+  - apiVersion: v2
+    appVersion: 1.2.0
     created: "2022-06-23T12:59:24.009544809Z"
     description: A Helm chart for Kubernetes
     digest: f1f3b07a09b25bc7ab84d43c1df0bf32209adf6d4794c3495e3d2203baed7bef
@@ -59,4 +71,4 @@ entries:
     urls:
     - https://github.com/entur/poc-plattform/releases/download/waffle-sizzler-1.0.0/waffle-sizzler-1.0.0.tgz
     version: 1.0.0
-generated: "2022-06-23T12:59:24.167260572Z"
+generated: "2022-06-23T13:29:52.466204322Z"
