@@ -48,7 +48,7 @@ jobs:
       - name: Lint Helm
         uses: helm/chart-testing-action@v1.0.0
         with:
-          command: ct lint --check-version-increment false --charts charts/${{ env.CHART_NAME }} --target-branch ${{ github.event.repository.default_branch }}
+          command: lint --check-version-increment false --charts charts/${{ env.CHART_NAME }} --target-branch ${{ github.event.repository.default_branch }}
           config: ct.yaml
 
       - name: Create kind cluster
