@@ -1,3 +1,13 @@
+## [1.3.9](https://github.com/entur/poc-plattform/compare/sausage-dispenser-1.3.8...sausage-dispenser-1.3.9) (2022-06-23)
+
+
+### Bug Fixes
+
+* cleanup ([7d6d8cc](https://github.com/entur/poc-plattform/commit/7d6d8cc6cbeb8b917c823706360549c8b7be8dd4))
+* configmap ref ([#3](https://github.com/entur/poc-plattform/issues/3)) ([1abe135](https://github.com/entur/poc-plattform/commit/1abe135985849fbf83d7bdb1ee04d3538a74c9d3))
+
+
+
 ## [1.3.8](https://github.com/entur/poc-plattform/compare/sausage-dispenser-1.3.6...sausage-dispenser-1.3.8) (2022-06-22)
 
 
