@@ -1,4 +1,20 @@
-## [1.3.9](https://github.com/entur/poc-plattform/compare/sausage-dispenser-1.3.8...sausage-dispenser-1.3.9) (2022-06-23)
+# [2.0.0](https://github.com/entur/poc-plattform/compare/sausage-dispenser-1.3.9...sausage-dispenser-2.0.0) (2022-06-23)
+
+
+### Features
+
+* Conv commit test ([#5](https://github.com/entur/poc-plattform/issues/5)) ([cdc5d5c](https://github.com/entur/poc-plattform/commit/cdc5d5ce2b7adff9b66f5b61df5fa664fe036383))
+
+
+### BREAKING CHANGES
+
+* Too many ...'s for most people
+
+Co-authored-by: Sindre Lindstad <>
+
+
+
+## 1.3.9 (2022-06-23)
 
 
 ### Bug Fixes
