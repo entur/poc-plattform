@@ -1,16 +1,38 @@
-name: release - sausage dispenser
+name: Release
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
     paths:
-      - "charts/sausage-dispenser/**"
+      - "charts/common/**"
 
 env:
-  CHART_NAME: "sausage-dispenser"
+  CHART_NAME: "common"
 
 jobs:
+  helm-unittest:
+    name: helm unittest
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Install Helm
+        uses: azure/setup-helm@v1
+        with:
+          version: v3.2.1
+
+      - name: Helm Unit Test
+        run: |
+          helm plugin install https://github.com/vbehar/helm3-unittest
+          helm unittest charts/common
+
   bump-version:
+    name: bump semver
+    needs: helm-unittest
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
@@ -21,7 +43,7 @@ jobs:
 
       - name: Conventional Changelog Action
         id: changelog
-        uses: TriPSs/conventional-changelog-action@v3
+        uses: TriPSs/conventional-changelog-action@9b8c94a880e647cdc3e5071e15e20f0fe210b5ce # v3.13.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           version-file: ./charts/${{ env.CHART_NAME }}/Chart.yaml
@@ -34,7 +56,7 @@ jobs:
           tag-prefix: "${{ env.CHART_NAME }}-"
 
       - name: Delete Tag
-        uses: dev-drprasad/delete-tag-and-release@v0.1.3
+        uses: dev-drprasad/delete-tag-and-release@085c6969f18bad0de1b9f3fe6692a3cd01f64fe5 # v0.2.0
         with:
           delete_release: true
           tag_name: ${{ steps.changelog.outputs.tag }}
@@ -42,6 +64,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   release-chart:
+    name: release helm chart
     runs-on: ubuntu-latest
     needs: bump-version
     steps:
@@ -57,6 +80,6 @@ jobs:
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
       - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.4.0
+        uses: helm/chart-releaser-action@a3454e46a6f5ac4811069a381e646961dda2e1bf #v1.4.0
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"

@@ -1,0 +1,19 @@
+name: Call PR Tests
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+      - ready_for_review
+  push:
+    branches:
+      - main
+
+jobs:
+  tf-tests:
+    uses: ./.github/workflows/pr-helm.yml
+    with:
+      chart_dirs: '["./charts/common"]'
