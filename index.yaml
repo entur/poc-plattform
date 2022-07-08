@@ -21,6 +21,16 @@ entries:
     urls:
     - https://github.com/entur/poc-plattform/releases/download/common-1.0.2/common-1.0.2.tgz
     version: 1.0.2
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-07-08T08:23:47.003412115Z"
+    description: A Helm chart for Kubernetes
+    digest: a70072b6d6b48a1f5dbbc29df82c96ca1a7640f65eb5b183ce078c37e237d9f3
+    name: common
+    type: application
+    urls:
+    - https://github.com/entur/poc-plattform/releases/download/common-1.0.0/common-1.0.0.tgz
+    version: 1.0.0
   machine-unlearner:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -92,4 +102,4 @@ entries:
     urls:
     - https://github.com/entur/poc-plattform/releases/download/waffle-sizzler-1.0.0/waffle-sizzler-1.0.0.tgz
     version: 1.0.0
-generated: "2022-07-08T08:14:21.275170352Z"
+generated: "2022-07-08T08:23:47.003431515Z"
