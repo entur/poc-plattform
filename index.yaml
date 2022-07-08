@@ -3,6 +3,16 @@ entries:
   common:
   - apiVersion: v2
     appVersion: 0.0.1
+    created: "2022-07-08T08:14:21.275147852Z"
+    description: A Helm chart for Entur's Kubernetes workloads
+    digest: 61e0ac9645f0d454ccca2578ea0273d6c5771dc3fdb266404620d6bb6f25d509
+    name: common
+    type: application
+    urls:
+    - https://github.com/entur/poc-plattform/releases/download/common-2.0.0/common-2.0.0.tgz
+    version: 2.0.0
+  - apiVersion: v2
+    appVersion: 0.0.1
     created: "2022-07-08T08:12:12.426630618Z"
     description: A Helm chart for Entur's Kubernetes workloads
     digest: aa3e7bad0a954a6daaf2d916aa75218efa840261e61dc99b3bec27b352051781
@@ -82,4 +92,4 @@ entries:
     urls:
     - https://github.com/entur/poc-plattform/releases/download/waffle-sizzler-1.0.0/waffle-sizzler-1.0.0.tgz
     version: 1.0.0
-generated: "2022-07-08T08:12:12.42664512Z"
+generated: "2022-07-08T08:14:21.275170352Z"
