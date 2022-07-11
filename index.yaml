@@ -3,6 +3,16 @@ entries:
   common:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-07-11T08:30:24.775997904Z"
+    description: A Helm chart for Kubernetes, now with more yolo
+    digest: 0598a9d5d0df16ebca1dbf9f8787e85e70dabf0d514fdabc20b2490c093a2a9e
+    name: common
+    type: application
+    urls:
+    - https://entur.github.io/poc-plattform/archive/common-2.2.0.tgz
+    version: 2.2.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-07-11T08:28:52.353005637Z"
     description: A Helm chart for Kubernetes, now with more yolo
     digest: 8e5ab8abb4515f6f187fee0570d4272233e64464d12a94939d44721ce7e9bfb2
@@ -31,4 +41,4 @@ entries:
     urls:
     - https://entur.github.io/poc-plattform/archive/archive/common-1.0.0.tgz
     version: 1.0.0
-generated: "2022-07-11T08:28:52.352196604Z"
+generated: "2022-07-11T08:30:24.775109199Z"
