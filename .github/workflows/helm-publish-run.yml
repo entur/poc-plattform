@@ -1,0 +1,10 @@
+name: Call Publish
+
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  main:
+    uses: ./.github/workflows/helm-publish.yml

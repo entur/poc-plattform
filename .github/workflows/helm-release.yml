@@ -30,27 +30,12 @@ jobs:
           ref: ${{ github.ref }}
           fetch-depth: 0
 
-      - name: changelog
+      - name: Helm Release
         uses: google-github-actions/release-please-action@v3
         with:
-          command: github-release
+          command: release-pr, github-release
           monorepo-tags: true
           package-name: ${{ matrix.chart }}
           path: ${{ inputs.charts_dir }}/${{ matrix.chart }}
           release-type: helm
-
-  helm-publish:
-    name: helm publish
-    runs-on: ubuntu-latest
-    needs: helm-release
-    steps:
-      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # renovate: tag=v3.0.2
-
-      - name: Publish Helm charts
-        uses: stefanprodan/helm-gh-pages@b43a8719cc63fdb3aa943cc57359ab19118eab3f # v1.5.0
-        with:
-          helm_version: ${{ inputs.helm_version }}
-          index_dir: "."
-          linting: "off"
-          target_dir: "archive"
-          token: ${{ secrets.GITHUB_TOKEN }}
+          draft-pull-request: true

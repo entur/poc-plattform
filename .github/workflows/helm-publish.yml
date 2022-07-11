@@ -1,0 +1,30 @@
+name: Helm Release
+
+on:
+  workflow_call:
+    inputs:
+      charts_dir:
+        required: false
+        type: string
+        default: "."
+      helm_version:
+        required: false
+        type: string
+        default: "3.2.1"
+
+jobs:
+  helm-publish:
+    name: helm publish
+    runs-on: ubuntu-latest
+    needs: helm-release
+    steps:
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # renovate: tag=v3.0.2
+
+      - name: Publish Helm charts
+        uses: stefanprodan/helm-gh-pages@b43a8719cc63fdb3aa943cc57359ab19118eab3f # v1.5.0
+        with:
+          helm_version: ${{ inputs.helm_version }}
+          index_dir: ${{ inputs.charts_dir }}
+          linting: "off"
+          target_dir: "archive"
+          token: ${{ secrets.GITHUB_TOKEN }}

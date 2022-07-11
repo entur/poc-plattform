@@ -7,6 +7,6 @@ on:
 
 jobs:
   main:
-    uses: ./.github/workflows/publish-helm.yml
+    uses: ./.github/workflows/helm-release.yml
     with:
       charts: '["common"]'

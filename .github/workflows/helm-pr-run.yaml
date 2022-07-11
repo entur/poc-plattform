@@ -16,6 +16,6 @@ jobs:
       token: ${{ secrets.GITHUB_TOKEN }}
 
   pr:
-    uses: ./.github/workflows/pr-helm.yml
+    uses: ./.github/workflows/helm-pr.yml
     with:
       charts: '["common"]'
