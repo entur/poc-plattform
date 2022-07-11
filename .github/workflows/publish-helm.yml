@@ -33,9 +33,11 @@ jobs:
           fallback-version: "0.1.0"
           github-token: ${{ secrets.GITHUB_TOKEN }}
           output-file: charts/${{ matrix.chart }}/CHANGELOG.md
-          release-count: 0 # Rebuild entire changelog
-          skip-ci: true
-          skip-commit: false # Update versions file
+          release-count: "1000" # Keep full changelog
+          skip-ci: "true"
+          skip-commit: "false"
+          skip-on-empty: "false"
+          skip-version-file: "false"
           tag-prefix: "${{ matrix.chart }}-"
           version-file: ./charts/${{ matrix.chart }}/Chart.yaml
           version-path: version
