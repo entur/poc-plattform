@@ -8,12 +8,9 @@ on:
       - opened
       - synchronize
       - ready_for_review
-  push:
-    branches:
-      - main
 
 jobs:
-  tf-tests:
+  pr:
     uses: ./.github/workflows/pr-helm.yml
     with:
       chart_dirs: '["./charts/common"]'
