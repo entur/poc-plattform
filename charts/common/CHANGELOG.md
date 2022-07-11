@@ -1,3 +1,12 @@
+# [2.3.0](https://github.com/entur/poc-plattform/compare/common-2.2.0...common-2.3.0) (2022-07-11)
+
+
+### Features
+
+* more yolo ([#6](https://github.com/entur/poc-plattform/issues/6)) ([99cac45](https://github.com/entur/poc-plattform/commit/99cac458f3d55070cb9831bf6719cde0644403fe))
+
+
+
 # [2.2.0](https://github.com/entur/poc-plattform/compare/common-2.1.0...common-2.2.0) (2022-07-11)
 
 
