@@ -1,4 +1,13 @@
-# 2.0.0 (2022-07-11)
+# [2.1.0](https://github.com/entur/poc-plattform/compare/common-2.0.0...common-2.1.0) (2022-07-11)
+
+
+### Features
+
+* always build on main push ([defb2f9](https://github.com/entur/poc-plattform/commit/defb2f9cbb8365b5246ba1e6859f9173b156c922))
+
+
+
+# [2.0.0](https://github.com/entur/poc-plattform/compare/cb9f87a4c4972826b27d1c34b5f9b8b5210884d4...common-2.0.0) (2022-07-11)
 
 
 ### Bug Fixes
