@@ -1,3 +1,12 @@
+# [2.2.0](https://github.com/entur/poc-plattform/compare/common-2.1.0...common-2.2.0) (2022-07-11)
+
+
+### Features
+
+* more clean pr gha ([3249199](https://github.com/entur/poc-plattform/commit/3249199a065409fb840e8f2a1f1c99d2f09109ac))
+
+
+
 # [2.1.0](https://github.com/entur/poc-plattform/compare/common-2.0.0...common-2.1.0) (2022-07-11)
 
 
