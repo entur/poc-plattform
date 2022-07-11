@@ -6,6 +6,10 @@ on:
       charts:
         required: true
         type: string
+      charts_dir:
+        required: false
+        type: string
+        default: "charts"
       helm_version:
         required: false
         type: string
@@ -32,14 +36,14 @@ jobs:
         with:
           fallback-version: "0.1.0"
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          output-file: charts/${{ matrix.chart }}/CHANGELOG.md
+          output-file: ${{ inputs.charts_dir }}/${{ matrix.chart }}/CHANGELOG.md
           release-count: "1000" # Keep full changelog
           skip-ci: "true"
           skip-commit: "false"
           skip-on-empty: "false"
           skip-version-file: "false"
           tag-prefix: "${{ matrix.chart }}-"
-          version-file: ./charts/${{ matrix.chart }}/Chart.yaml
+          version-file: ./${{ inputs.charts_dir }}/${{ matrix.chart }}/Chart.yaml
           version-path: version
 
   helm-publish:
