@@ -1,9 +1,9 @@
 name: Call Publish
 
 on:
-  release:
-    types:
-      - released
+  push:
+    tags:
+      - "*"
 
 jobs:
   main:
