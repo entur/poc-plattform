@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/entur/poc-plattform/compare/common-v2.0.0...common-v2.0.1) (2022-07-12)
+
+
+### Bug Fixes
+
+* optimism ([23118a4](https://github.com/entur/poc-plattform/commit/23118a4e47a82a0e9f62b1958a1cb6b5aa384ae5))
+
 ## [2.0.0](https://github.com/entur/poc-plattform/compare/common-v1.1.0...common-v2.0.0) (2022-07-12)
 
 
