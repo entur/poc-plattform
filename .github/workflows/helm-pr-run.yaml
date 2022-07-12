@@ -11,11 +11,13 @@ on:
 
 jobs:
   validate-pr:
+    if: contains(github.ref, 'release-please--branches') == false
     uses: entur/gh-workflows/.github/workflows/pr-validation.yml@main
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}
 
   pr:
+    if: contains(github.ref, 'release-please--branches') == false
     uses: ./.github/workflows/helm-pr.yml
     with:
       charts: '["common"]'
