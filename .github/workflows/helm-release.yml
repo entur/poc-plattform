@@ -33,7 +33,7 @@ jobs:
       - name: Helm Release
         uses: google-github-actions/release-please-action@v3
         with:
-          command: manifest, release-pr, github-release
+          command: manifest
           monorepo-tags: true
           package-name: ${{ matrix.chart }}
           path: ${{ inputs.charts_dir }}/${{ matrix.chart }}
