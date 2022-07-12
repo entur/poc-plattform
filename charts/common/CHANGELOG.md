@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/entur/poc-plattform/compare/common-v1.1.0...common-v2.0.0) (2022-07-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* add skepticism
+
+### Features
+
+* add skepticism ([41c45ba](https://github.com/entur/poc-plattform/commit/41c45ba134df653a11a7b0fd4d7a13fa40eb9cfb))
+
 ## [1.1.0](https://github.com/entur/poc-plattform/compare/common-v1.0.0...common-v1.1.0) (2022-07-12)
 
 
