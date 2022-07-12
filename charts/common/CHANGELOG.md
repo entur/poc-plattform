@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2](https://github.com/entur/poc-plattform/compare/common-v2.0.1...common-v2.0.2) (2022-07-12)
+
+
+### Bug Fixes
+
+* should work now ([2e73d9c](https://github.com/entur/poc-plattform/commit/2e73d9cb14d5358394a4ecbe708eea43f208638f))
+
 ## [2.0.1](https://github.com/entur/poc-plattform/compare/common-v2.0.0...common-v2.0.1) (2022-07-12)
 
 
