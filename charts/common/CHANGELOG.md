@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/entur/poc-plattform/compare/common-v1.0.0...common-v1.1.0) (2022-07-12)
+
+
+### Features
+
+* more text for ya ([709fc63](https://github.com/entur/poc-plattform/commit/709fc635eef44155f4e3e7eb3167849fbf3e841e))
+
 ## 1.0.0 (2022-07-12)
 
 
