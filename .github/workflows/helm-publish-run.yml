@@ -1,4 +1,4 @@
-name: Call Publish
+name: Call Helm Publish
 
 on:
   push:
