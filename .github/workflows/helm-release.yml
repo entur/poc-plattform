@@ -1,4 +1,4 @@
-name: Release Please
+name: Helm Release
 
 on:
   workflow_call:
@@ -31,6 +31,7 @@ jobs:
           fetch-depth: 0
 
       - name: Helm Release
+        id: release
         uses: google-github-actions/release-please-action@v3
         with:
           monorepo-tags: true
@@ -38,3 +39,14 @@ jobs:
           path: ${{ inputs.charts_dir }}/${{ matrix.chart }}
           release-type: helm
           draft-pull-request: true
+
+      - name: Publish Helm charts
+        uses: stefanprodan/helm-gh-pages@b43a8719cc63fdb3aa943cc57359ab19118eab3f # v1.5.0
+        with:
+          helm_version: ${{ inputs.helm_version }}
+          charts: ${{ inputs.charts_dir }}
+          index_dir: "."
+          linting: "off"
+          target_dir: "archive"
+          token: ${{ secrets.GITHUB_TOKEN }}
+        if: ${{ steps.release.outputs.releases_created }}
