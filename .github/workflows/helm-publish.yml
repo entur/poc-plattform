@@ -6,7 +6,7 @@ on:
       charts_dir:
         required: false
         type: string
-        default: "."
+        default: "charts"
       helm_version:
         required: false
         type: string
@@ -24,7 +24,8 @@ jobs:
         uses: stefanprodan/helm-gh-pages@b43a8719cc63fdb3aa943cc57359ab19118eab3f # v1.5.0
         with:
           helm_version: ${{ inputs.helm_version }}
-          index_dir: ${{ inputs.charts_dir }}
+          charts: ${{ inputs.charts_dir }}
+          index_dir: "."
           linting: "off"
           target_dir: "archive"
           token: ${{ secrets.GITHUB_TOKEN }}
