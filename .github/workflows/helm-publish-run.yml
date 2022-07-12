@@ -3,7 +3,7 @@ name: Call Publish
 on:
   release:
     types:
-      - published
+      - released
 
 jobs:
   main:
